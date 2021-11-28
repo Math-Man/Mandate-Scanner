@@ -27,13 +27,14 @@ public class MandateController
 
     private final MandateManager mandateManager = new MandateManager();
 
-
+    /*
     @PostMapping("mandate")
     @ResponseStatus(HttpStatus.CREATED)
     public Mandate postMandate(@RequestBody Mandate mandate)
     {
         return mandateRepository.save(mandate);
     }
+    */
 
     /*
     @GetMapping("mandate/{name}")
@@ -81,8 +82,6 @@ public class MandateController
     }
 
 
-
-
     @GetMapping("compare/{id}")
     public ResponseEntity<MandateComparison> getComparison(@PathVariable String id)
     {
@@ -128,29 +127,17 @@ public class MandateController
                 System.out.println("No such mandate exists");
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
-            System.out.println("Ok mandates I need exists I am creating a comparasion");
-
-
             MandateComparison comp = mandateRepository.saveMandateComparison(mandateManager.GenerateComparison(DocumentName,VersionFrom,VersionTo));
-            //mandateRepository.saveMandateComparison(comp);
-
-            //System.out.println("There I have made a new one, " + comp );
-
             return ResponseEntity.ok(comp);
-            //return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         else
         {
             System.out.println("Already Exists");
-            //return ResponseEntity.status(HttpStatus.CONFLICT).build();
-
             return ResponseEntity.ok(comparison);
         }
-
-        //return ResponseEntity.ok(comparison);
     }
 
-
+    /*
     @PostMapping("compare")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<MandateComparison> postComprasion(@RequestBody MandateComparison comp)
@@ -168,8 +155,8 @@ public class MandateController
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(mandateRepository.saveMandateComparison(comp));
-        //return ResponseEntity.ok(mandateRepository.saveMandateComparison(comp));
     }
+    */
 
 
 

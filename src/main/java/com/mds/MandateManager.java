@@ -51,6 +51,7 @@ public class MandateManager //implements Runnable
     @PostConstruct
     public void init()
     {
+        //Enabled this once to build the DB
         //generateMandateDB(true);
     }
 
