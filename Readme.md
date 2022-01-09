@@ -19,9 +19,9 @@ Once started swagger can be accessed from url http://**url base**:**port**/swagg
 Under application properties, the storage database name can be changed.
 By default, it creates a data repo and creates "mandates" and "comparisons" repositories under data repo.
 
-`spring.data.mongodb.database = data
- data.mongo.documents.mandates = mandates
- data.mongo.documents.comparison = comparisons`
+         spring.data.mongodb.database = data
+         data.mongo.documents.mandates = mandates
+         data.mongo.documents.comparison = comparisons
 
 #### Note
 I was originally going to develop this further and put it on some api sharing website. 
