@@ -7,7 +7,7 @@ Uses MongoDB for local storage, has a rest end point for accessing the stored da
 MandateManager class uses a scheduled task to scrape the target website, downloads the package and unzips it.
 Comparisons between the mandate versions gets built on request from the rest end point.
 
-Comparisons are made per line basis, stores which line was changed and the the changed text on the recent version.
+Comparisons gets built per line basis, stores which line was changed and the changed text on the most recent version.
 
 ## Usage
 Just run it as if you would run any maven spring boot application. Entry point is on MandateScannerApplication class
